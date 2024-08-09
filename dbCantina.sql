@@ -19,4 +19,17 @@ create table tbFuncionarios(
     telCelular char(10),
     primary key(codFunc));
 
+create table tbUsuario(
+    codUsu int not null auto_increment,
+    nome varchar(25) not null unique,
+    senha varchar(10) not null,
+    codFunc int not null,
+    primary key(codUsu),
+    foreign key(codFunc)references tbFuncionarios(codFunc));
+
+
+    -- visualizando a estrutura das tabelas
     desc tbFuncionarios;
+    desc tbUsuario; 
+
+    
